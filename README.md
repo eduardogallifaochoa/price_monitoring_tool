@@ -1,6 +1,6 @@
 # 🐍 Price Monitoring Tool
 
-![Build Status](https://github.com/eduardogallifaochoa/price-monitoring-tool/actions/workflows/ci_cd.yml/badge.svg)
+![Build Status](https://github.com/eduardogallifaochoa/price_monitoring_tool/actions/workflows/ci_cd.yaml/badge.svg)
 [![codecov](https://codecov.io/gh/eduardogallifaochoa/price-monitoring-tool/branch/main/graph/badge.svg)](https://codecov.io/gh/eduardogallifaochoa/price-monitoring-tool)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 

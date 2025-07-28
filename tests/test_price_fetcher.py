@@ -1,8 +1,12 @@
 import pytest
+import os
 from services.price_fetcher import get_current_price, fetch_all_prices
 from config.settings import CURRENCY_PAIRS
 
-# --- Test live API (Binance) ---
+# Detect if we are in CI (GitHub Actions sets CI=true)
+IS_CI = os.getenv("CI") == "true"
+
+@pytest.mark.skipif(IS_CI, reason="Skipping live API test in CI environment")
 def test_get_current_price_live():
     """
     Test that Binance API returns a positive float for BTC price.
@@ -11,6 +15,7 @@ def test_get_current_price_live():
     assert isinstance(price, float)
     assert price > 0
 
+@pytest.mark.skipif(IS_CI, reason="Skipping live API test in CI environment")
 def test_fetch_all_prices_live():
     """
     Test that all configured currency pairs return valid prices.
@@ -22,7 +27,7 @@ def test_fetch_all_prices_live():
         assert isinstance(prices[symbol], float)
         assert prices[symbol] > 0
 
-# --- Test mock (example for offline test) ---
+# --- Test mock ---
 @pytest.mark.parametrize("mock_price", [25000.0, 30000.5])
 def test_mock_price(monkeypatch, mock_price):
     """
