@@ -1,0 +1,12 @@
+[run]
+branch = True
+source = services
+
+[report]
+omit =
+    */__init__.py
+    */tests/*
+    main.py
+    config/*
+show_missing = True
+skip_covered = True
