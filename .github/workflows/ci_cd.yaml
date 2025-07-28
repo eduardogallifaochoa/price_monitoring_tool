@@ -24,11 +24,18 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest pytest-cov
+          pip install pytest pytest-cov codecov
 
       - name: Run tests with coverage
         run: |
-          pytest --cov=services --cov-report=term-missing tests/
+          PYTHONPATH=. pytest --cov=services --cov-report=xml tests/
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+          fail_ci_if_error: true
 
   build:
     runs-on: windows-latest
