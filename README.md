@@ -2,6 +2,8 @@
 
 ![Build Status](https://github.com/eduardogallifaochoa/price_monitoring_tool/actions/workflows/ci_cd.yaml/badge.svg)
 [![codecov](https://codecov.io/gh/eduardogallifaochoa/price_monitoring_tool/branch/main/graph/badge.svg)](https://codecov.io/gh/eduardogallifaochoa/price_monitoring_tool)
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+![Pytest](https://img.shields.io/badge/Testing-Pytest-green?logo=pytest&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A **real-time cryptocurrency price monitoring system** built with **Python**, **Binance API**, **SQLite**, and **PyInstaller**, fully tested and integrated with **GitHub Actions CI/CD**.
